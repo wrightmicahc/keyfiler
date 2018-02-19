@@ -195,7 +195,7 @@ writekeyfile <- function(STDIDENT,
                 return(key_args)
         } else {
                 fileConn <- file(keypath)
-                writeLines(keyfile, fileConn)
+                writeLines(key_args, fileConn)
                 close(fileConn)
         }
 }
