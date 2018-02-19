@@ -9,8 +9,9 @@
 #' @param path_to_bat Character string with .bat extension, file path where
 #' .bat file will be created.
 #'
-#' @examples
+#' @examples \dontrun{
 #' writebatchfile(example.key, "nc", "temp/path/file.bat")
+#' }
 ################################################################################
 writebatchfile <- function(keyfile, variant, path_to_bat) {
   # create arguments in batch file

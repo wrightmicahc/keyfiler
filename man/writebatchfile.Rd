@@ -20,5 +20,7 @@ This function creates a batch file to run FVS. Keyfiles can be created using
 writekeyfile.
 }
 \examples{
+\dontrun{
 writebatchfile(example.key, "nc", "temp/path/file.bat")
+}
 }
