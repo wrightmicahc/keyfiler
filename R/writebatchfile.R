@@ -9,7 +9,7 @@
 #' @param path_to_bat Character string with .bat extension, file path where
 #' .bat file will be created.
 #'
-#'#' @export
+#' @export
 #'
 #' @examples \dontrun{
 #' writebatchfile(example.key, "nc", "temp/path/file.bat")
