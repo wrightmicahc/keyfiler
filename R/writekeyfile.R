@@ -71,6 +71,8 @@
 #'
 #' @param keypath File path were keyfile will be written.
 #'
+#' @export
+#'
 #' @references
 #' Van Dyck, M.G. and Smith-Mateja, E.E., 2000. Keyword reference guide for the
 #' Forest Vegetation Simulator. USDA Forest Service Forest Management Service
