@@ -13,7 +13,9 @@ writebatchfile(keyfile, variant, path_to_bat)
 lower case. See example.}
 
 \item{path_to_bat}{Character string with .bat extension, file path where
-.bat file will be created.}
+.bat file will be created.
+
+#' @export}
 }
 \description{
 This function creates a batch file to run FVS. Keyfiles can be created using
