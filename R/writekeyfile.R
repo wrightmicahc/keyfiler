@@ -148,14 +148,13 @@ writekeyfile <- function(STDIDENT,
                        paste0(add_space("POTFSEAS", -10),
                               paste0(add_space(POTFSEAS, 10),
                                      collapse = "")),
-                       for (i in length(FUELMOVE_C)) {
+                       sapply(FUELMOVE_C, function(x)
                                paste0(add_space("FUELMOVE", -10),
                                       add_space(1, 10),
-                                      add_space(FUELMOVE_C[i], 10),
+                                      add_space(x, 10),
                                       add_space(0, 10),
                                       add_space(0, 10),
-                                      add_space(FUELMOVE, 10))
-                       },
+                                      add_space(FUELMOVE, 10))),
                        paste0(add_space("POTFMOIS_S", -10),
                               paste0(add_space(POTFMOIS_S, 10),
                                      collapse = "")),
