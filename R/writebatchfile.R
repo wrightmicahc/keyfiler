@@ -32,7 +32,8 @@ writebatchfile <- function(keyfile, variant, path_to_bat, look = TRUE) {
               paste0("del ", keyfile, ".rsp"),
               paste0("del ", keyfile, ".tre"),
               paste0("del ", keyfile, ".sum"),
-              paste0("del ", keyfile, ".chp"))
+              paste0("del ", keyfile, ".chp"),
+              paste0("del ", keyfile, ".trl"))
               if(look == TRUE) {
                       bat_args <- c(bat_args,
                                     paste0("notepad ", keyfile, ".out"))
