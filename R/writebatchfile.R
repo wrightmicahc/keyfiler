@@ -9,13 +9,15 @@
 #' @param path_to_bat Character string with .bat extension, file path where
 #' .bat file will be created.
 #'
+#'@param look Logical. Open .out file with notepad?
+#'
 #' @export
 #'
 #' @examples \dontrun{
 #' writebatchfile(example.key, "nc", "temp/path/file.bat")
 #' }
 ################################################################################
-writebatchfile <- function(keyfile, variant, path_to_bat) {
+writebatchfile <- function(keyfile, variant, path_to_bat, look = TRUE) {
   # create arguments in batch file
   bat_args <- c("rem StdFVS run on DOS.",
               paste0("echo ", keyfile, ".key > ", keyfile, ".rsp"),
@@ -28,7 +30,13 @@ writebatchfile <- function(keyfile, variant, path_to_bat) {
               paste0("\"C:\\FVSbin\\FVS", variant, ".exe \" < ", keyfile, ".rsp"),
               paste0("if not exist ", keyfile, "_index.svs rmdir ", keyfile, ""),
               paste0("del ", keyfile, ".rsp"),
-              paste0("notepad ", keyfile, ".out"))
+              paste0("del ", keyfile, ".tre"),
+              paste0("del ", keyfile, ".sum"),
+              paste0("del ", keyfile, ".chp"))
+              if(look = TRUE) {
+                      bat_args <- c(bat_args,
+                                    paste0("notepad ", keyfile, ".out"))
+                      }
   # open path to batch file location
   fileConn <- file(path_to_bat)
   # write the batch file
