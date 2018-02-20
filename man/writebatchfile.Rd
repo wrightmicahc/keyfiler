@@ -4,7 +4,7 @@
 \alias{writebatchfile}
 \title{A Function to Write Batch for Running FVS Keyfiles}
 \usage{
-writebatchfile(keyfile, variant, path_to_bat)
+writebatchfile(keyfile, variant, path_to_bat, look = TRUE)
 }
 \arguments{
 \item{keyfile}{name of the .key file.}
@@ -14,6 +14,8 @@ lower case. See example.}
 
 \item{path_to_bat}{Character string with .bat extension, file path where
 .bat file will be created.}
+
+\item{look}{Logical. Open .out file with notepad?}
 }
 \description{
 This function creates a batch file to run FVS. Keyfiles can be created using
@@ -21,6 +23,6 @@ writekeyfile.
 }
 \examples{
 \dontrun{
-writebatchfile(example.key, "nc", "temp/path/file.bat")
+writebatchfile(example.key, "nc", "temp/path/file.bat", look = TRUE)
 }
 }

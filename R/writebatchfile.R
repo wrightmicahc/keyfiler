@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples \dontrun{
-#' writebatchfile(example.key, "nc", "temp/path/file.bat")
+#' writebatchfile(example.key, "nc", "temp/path/file.bat", look = TRUE)
 #' }
 ################################################################################
 writebatchfile <- function(keyfile, variant, path_to_bat, look = TRUE) {
@@ -33,7 +33,7 @@ writebatchfile <- function(keyfile, variant, path_to_bat, look = TRUE) {
               paste0("del ", keyfile, ".tre"),
               paste0("del ", keyfile, ".sum"),
               paste0("del ", keyfile, ".chp"))
-              if(look = TRUE) {
+              if(look == TRUE) {
                       bat_args <- c(bat_args,
                                     paste0("notepad ", keyfile, ".out"))
                       }
