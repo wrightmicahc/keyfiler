@@ -169,14 +169,14 @@ writekeyfile <- function(STDIDENT,
                                      collapse = "")),
                        sapply(writetables, function(x)
                                paste0(add_space(x, -10),
-                                      add_space(0, 10))),
+                                      add_space(2, 10))),
                        "End",
                        "DataBase",
                        "DSNOut",
                        DSNOut,
                        sapply(writetables, function(x)
                                paste0(add_space(x, -10),
-                                      add_space(0, 10))),
+                                      add_space(2, 10))),
                        "End",
                        "PROCESS",
                        "STOP")
@@ -188,7 +188,7 @@ writekeyfile <- function(STDIDENT,
                        DSNOut,
                        sapply(writetables, function(x)
                                paste0(add_space(x, -10),
-                                      add_space(0, 10))),
+                                      add_space(2, 10))),
                        "End",
                        "PROCESS",
                        "STOP")
