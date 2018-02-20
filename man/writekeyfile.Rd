@@ -8,7 +8,8 @@ writekeyfile(STDIDENT, MGMTID = "None", STDINFO = NULL, NUMCYCLE = 10,
   TIMEINT = c(0, 10), DSNIN, TreeSQL, DSNOut, FFE = FALSE,
   FUELINIT = NULL, POTFTEMP = NULL, POTFWIND = NULL, POTFSEAS = NULL,
   FUELMOVE_C = NULL, FUELMOVE = c(50), POTFMOIS_S = NULL,
-  POTFMOIS_M = NULL, SIMFIRE = NULL, writefile = FALSE, keypath = NULL)
+  POTFMOIS_M = NULL, SIMFIRE = NULL, writetables = NULL,
+  writefile = FALSE, keypath = NULL)
 }
 \arguments{
 \item{STDIDENT}{Stand ID number}
@@ -29,6 +30,8 @@ quoted string.}
 \item{FFE}{Logical. If TRUE, must specify the following FFE keywords:
 FUELINIT, POTFTEMP, POTFWIND, POTFSEAS, FUELMOVE_C, FUELMOVE, POTFMOIS_S,
 POTFMOIS_M, SIMFIRE}
+
+\item{writetables}{Character string of FVS report table keywords}
 
 \item{writefile}{Logical. Write output to text file?}
 

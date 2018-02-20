@@ -67,6 +67,8 @@
 #' @param SIMFIRE: Numeric, length 1. How often to simulate fires, 0 is every
 #' cycle
 #'
+#' @param writetables Character string of FVS report table keywords
+#'
 #' @param writefile Logical. Write output to text file?
 #'
 #' @param keypath File path were keyfile will be written.
@@ -105,6 +107,7 @@ writekeyfile <- function(STDIDENT,
                          POTFMOIS_S = NULL,
                          POTFMOIS_M = NULL,
                          SIMFIRE = NULL,
+                         writetables = NULL,
                          writefile = FALSE,
                          keypath = NULL) {
         # browser()
@@ -164,14 +167,16 @@ writekeyfile <- function(STDIDENT,
                        paste0(add_space("SIMFIRE", -10),
                               paste0(add_space(SIMFIRE, 10),
                                      collapse = "")),
+                       sapply(writetables, function(x)
+                               paste0(add_space(x, -10),
+                                      add_space(0, 10))),
                        "End",
                        "DataBase",
                        "DSNOut",
                        DSNOut,
-                       "MORTREPT",
-                       "POTFIRE",
-                       "BURNREPT",
-                       "FUELREPT",
+                       sapply(writetables, function(x)
+                               paste0(add_space(x, -10),
+                                      add_space(0, 10))),
                        "End",
                        "PROCESS",
                        "STOP")
@@ -181,8 +186,9 @@ writekeyfile <- function(STDIDENT,
         end_args  <- c("DataBase",
                        "DSNOut",
                        DSNOut,
-                       "Compute",
-                       "Summary",
+                       sapply(writetables, function(x)
+                               paste0(add_space(x, -10),
+                                      add_space(0, 10))),
                        "End",
                        "PROCESS",
                        "STOP")
